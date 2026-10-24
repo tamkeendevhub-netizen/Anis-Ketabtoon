@@ -1,486 +1,532 @@
-
 <!DOCTYPE html>
 <html lang="ps" dir="rtl">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#0072FF">
-  <meta name="description" content="انیس کتابتون - د اپلیکیشن ډاونلوډ پاڼه">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#071b16">
 
-  <title>انيس کتابتون | Aniis Ketabtoon</title>
+    <title>Anis Ketabtoon | انیس کتابتون</title>
 
-  <style>
-    @font-face {
-      font-family: "PashtoFont";
-      src: url("./main/mmm.ttf") format("truetype");
-      font-display: swap;
-    }
+    <meta name="description"
+          content="Anis Ketabtoon - د اسلامي کتابونو او مطالعې لپاره یو مناسب ځای.">
 
-    :root {
-      --primary: #0072FF;
-      --primary-dark: #0059CC;
-      --bg: #F4F7FC;
-      --text: #17243A;
-      --muted: #758198;
-      --white: #FFFFFF;
-      --border: #E7ECF4;
-    }
+    <style>
+        /* 🟢 د پښتو فونټ: فایل په Root کې دی */
+        @font-face {
+            font-family: AnisFont;
+            src: url("./mmm.ttf") format("truetype");
+            font-display: swap;
+        }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      font-family: "PashtoFont", Tahoma, sans-serif;
-      min-height: 100vh;
-      color: var(--text);
-      background:
-        radial-gradient(circle at 10% 5%, #DDEBFF 0, transparent 30%),
-        var(--bg);
-      display: flex;
-      flex-direction: column;
-    }
+        :root {
+            --green: #00e676;
+            --light-green: #8affbd;
+            --dark: #061811;
+            --card: #102b21;
+            --white: #ffffff;
+            --muted: #c7dacf;
+            --yellow: #ffdc55;
+        }
 
-    button, a {
-      font: inherit;
-      -webkit-tap-highlight-color: transparent;
-    }
+        body {
+            font-family: AnisFont, Tahoma, Arial, sans-serif;
+            color: var(--white);
+            min-height: 100vh;
 
-    .navbar {
-      width: 100%;
-      max-width: 1100px;
-      margin: auto;
-      padding: 22px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 14px;
-    }
+            background:
+                radial-gradient(
+                    circle at top,
+                    #1b5138 0%,
+                    #071b13 55%,
+                    #030d08 100%
+                );
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 19px;
-      font-weight: bold;
-    }
+            line-height: 1.9;
+        }
 
-    .brand img {
-      width: 43px;
-      height: 43px;
-      object-fit: contain;
-      border-radius: 13px;
-      background: white;
-      padding: 3px;
-    }
+        /* 🟢 Header */
+        header {
+            padding: 20px 12px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.25);
+            border-bottom: 1px solid rgba(0, 230, 118, 0.25);
+        }
 
-    .online {
-      color: #15803D;
-      background: #DCFCE7;
-      border-radius: 30px;
-      padding: 7px 13px;
-      font-size: 12px;
-      white-space: nowrap;
-    }
+        .brand {
+            font-family: AnisFont, Arial, sans-serif;
+            font-size: 29px;
+            font-weight: bold;
+            color: var(--light-green);
+            direction: ltr;
+        }
 
-    main {
-      width: 100%;
-      max-width: 1100px;
-      margin: auto;
-      padding: 35px 20px 70px;
-      display: grid;
-      place-items: center;
-      flex: 1;
-    }
+        .subtitle {
+            font-size: 14px;
+            color: var(--muted);
+        }
 
-    .download-card {
-      position: relative;
-      overflow: hidden;
-      background: var(--white);
-      border: 1px solid rgba(231, 236, 244, .9);
-      border-radius: 28px;
-      width: 100%;
-      max-width: 440px;
-      padding: 38px 28px 30px;
-      text-align: center;
-      box-shadow: 0 22px 70px rgba(31, 68, 125, .10);
-      animation: appear .65s ease both;
-    }
+        /* 🟡 Main */
+        .container {
+            width: 100%;
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 32px 15px;
+        }
 
-    .download-card::before {
-      content: "";
-      position: absolute;
-      height: 5px;
-      top: 0;
-      right: 0;
-      left: 0;
-      background: linear-gradient(90deg, #55A0FF, var(--primary));
-    }
+        .card {
+            text-align: center;
+            padding: 30px 22px;
+            border-radius: 25px;
 
-    .app-icon-wrap {
-      width: 120px;
-      height: 120px;
-      padding: 9px;
-      margin: 0 auto 22px;
-      border-radius: 30px;
-      background: linear-gradient(145deg, #EDF5FF, #FFFFFF);
-      border: 1px solid #E7F0FF;
-      box-shadow: 0 12px 30px rgba(0, 114, 255, .12);
-    }
+            background: linear-gradient(
+                145deg,
+                rgba(20, 58, 42, 0.98),
+                rgba(7, 29, 19, 0.98)
+            );
 
-    .app-icon {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      border-radius: 23px;
-    }
+            border: 1px solid rgba(0, 230, 118, 0.25);
 
-    .eyebrow {
-      display: inline-block;
-      color: var(--primary);
-      background: #EDF5FF;
-      padding: 6px 13px;
-      border-radius: 30px;
-      font-size: 12px;
-      margin-bottom: 13px;
-    }
+            box-shadow:
+                0 18px 50px rgba(0, 0, 0, 0.35);
+        }
 
-    h1 {
-      font-size: clamp(26px, 6vw, 34px);
-      line-height: 1.7;
-      margin-bottom: 6px;
-      font-weight: bold;
-    }
+        /* 🟢 App Icon: icon.png */
+        .app-icon {
+            display: block;
+            width: 135px;
+            height: 135px;
+            margin: 0 auto 18px;
 
-    .subtitle {
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 2;
-      margin-bottom: 25px;
-    }
+            object-fit: cover;
+            border-radius: 28px;
+            border: 2px solid var(--green);
+            background: #ffffff;
 
-    .stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-bottom: 25px;
-    }
+            box-shadow:
+                0 8px 28px rgba(0, 230, 118, 0.16);
+        }
 
-    .stat {
-      border: 1px solid var(--border);
-      border-radius: 17px;
-      padding: 15px 8px;
-      background: #FAFCFF;
-    }
+        h1 {
+            font-size: 29px;
+            margin-bottom: 4px;
+        }
 
-    .stat-icon {
-      display: block;
-      font-size: 20px;
-      margin-bottom: 7px;
-    }
+        .english-title {
+            direction: ltr;
+            font-family: Arial, sans-serif;
+            color: var(--light-green);
+            font-size: 19px;
+            margin-bottom: 15px;
+        }
 
-    .stat-value {
-      display: block;
-      font-size: 21px;
-      font-weight: bold;
-      color: var(--primary);
-      direction: ltr;
-      overflow-wrap: anywhere;
-    }
+        .description {
+            max-width: 500px;
+            margin: 0 auto 22px;
+            color: var(--muted);
+            font-size: 15px;
+        }
 
-    .stat-label {
-      display: block;
-      margin-top: 5px;
-      font-size: 12px;
-      color: var(--muted);
-    }
+        /* 🟡 Features */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 24px 0;
+        }
 
-    .download-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      width: 100%;
-      min-height: 56px;
-      color: white;
-      text-decoration: none;
-      border: 2px solid transparent;
-      border-radius: 16px;
-      background: linear-gradient(135deg, #1680FF, #005FE8);
-      box-shadow: 0 9px 22px rgba(0, 114, 255, .24);
-      font-size: 17px;
-      font-weight: bold;
-      transition: transform .2s, box-shadow .2s, background .2s;
-      cursor: pointer;
-    }
+        .feature {
+            padding: 13px 5px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.045);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--muted);
+            font-size: 12px;
+        }
 
-    .download-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 13px 28px rgba(0, 114, 255, .32);
-    }
+        .feature-icon {
+            display: block;
+            font-size: 25px;
+            margin-bottom: 5px;
+        }
 
-    .download-btn:focus-visible {
-      outline: 3px solid var(--primary);
-      outline-offset: 4px;
-    }
+        /* 🟢 Download Button */
+        .download-button {
+            display: block;
+            width: 100%;
+            max-width: 380px;
+            margin: 24px auto 12px;
+            padding: 15px 12px;
 
-    .download-btn:active {
-      transform: scale(.98);
-    }
+            border: none;
+            border-radius: 15px;
 
-    .download-btn svg {
-      width: 22px;
-      height: 22px;
-      flex-shrink: 0;
-    }
+            background: linear-gradient(
+                135deg,
+                #00f080,
+                #00b85c
+            );
 
-    .file-info {
-      margin-top: 15px;
-      font-size: 12px;
-      color: var(--muted);
-      direction: ltr;
-      overflow-wrap: anywhere;
-    }
+            color: #042014;
+            text-decoration: none;
+            font-family: AnisFont, Tahoma, sans-serif;
+            font-size: 19px;
+            font-weight: bold;
 
-    .status {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 7px;
-      margin-top: 20px;
-      font-size: 12px;
-      color: var(--muted);
-      line-height: 1.8;
-    }
+            box-shadow:
+                0 8px 25px rgba(0, 230, 118, 0.2);
 
-    .status-dot {
-      width: 7px;
-      height: 7px;
-      flex-shrink: 0;
-      background: #16A34A;
-      border-radius: 50%;
-    }
+            transition: transform 0.2s ease;
+        }
 
-    .status.error {
-      color: #B45309;
-    }
+        .download-button:hover {
+            transform: translateY(-3px);
+        }
 
-    .status.error .status-dot {
-      background: #F59E0B;
-    }
+        .download-button:active {
+            transform: scale(0.98);
+        }
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 2;
-    }
+        .file-note {
+            direction: ltr;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            color: #a7c9b5;
+        }
 
-    footer span {
-      color: var(--primary);
-    }
+        /* 🟡 Firebase Counter */
+        .counter {
+            margin-top: 27px;
+            padding: 18px 12px;
+            border-radius: 16px;
 
-    @keyframes appear {
-      from {
-        opacity: 0;
-        transform: translateY(18px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+            background: rgba(0, 230, 118, 0.07);
+            border: 1px solid rgba(0, 230, 118, 0.18);
+        }
 
-    @media (max-width: 480px) {
-      .navbar {
-        padding: 17px 16px;
-      }
+        .counter-label {
+            color: var(--muted);
+            font-size: 14px;
+        }
 
-      .brand {
-        font-size: 16px;
-      }
+        .counter-number {
+            display: block;
+            direction: ltr;
+            font-family: Arial, sans-serif;
+            color: var(--yellow);
+            font-size: 33px;
+            font-weight: bold;
+        }
 
-      main {
-        padding: 25px 15px 45px;
-      }
+        .counter-status {
+            color: #9db8a8;
+            font-size: 12px;
+        }
 
-      .download-card {
-        padding: 32px 20px 25px;
-        border-radius: 23px;
-      }
+        /* 🟢 Error message */
+        .message {
+            display: none;
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 10px;
+            overflow-wrap: anywhere;
+            font-size: 13px;
+        }
 
-      .app-icon-wrap {
-        width: 105px;
-        height: 105px;
-      }
-    }
+        .message.error {
+            display: block;
+            color: #ffd7d7;
+            background: rgba(255, 65, 65, 0.13);
+        }
 
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: .01ms !important;
-        transition-duration: .01ms !important;
-      }
-    }
-  </style>
+        /* 🟡 Footer */
+        footer {
+            text-align: center;
+            padding: 20px 12px 30px;
+            color: #a0b9a9;
+            font-size: 13px;
+        }
+
+        footer span {
+            color: var(--light-green);
+        }
+
+        /* 📱 Mobile */
+        @media (max-width: 480px) {
+            .container {
+                padding: 22px 12px;
+            }
+
+            .card {
+                padding: 24px 14px;
+            }
+
+            .app-icon {
+                width: 115px;
+                height: 115px;
+            }
+
+            h1 {
+                font-size: 25px;
+            }
+
+            .features {
+                gap: 7px;
+            }
+
+            .feature {
+                font-size: 11px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-  <header class="navbar">
-    <div class="brand">
-      <img src="./main/icon.png" alt="د انیس کتابتون نښه">
-      <span>انيس کتابتون</span>
-    </div>
 
-    <span class="online">د اپ رسمي پاڼه</span>
-  </header>
+    <!-- 🟢 Website Header -->
+    <header>
+        <div class="brand">Anis Ketabtoon</div>
+        <div class="subtitle">د علم، مطالعې او پوهې نړۍ</div>
+    </header>
 
-  <main>
-    <section class="download-card" aria-labelledby="app-title">
+    <main class="container">
 
-      <div class="app-icon-wrap">
-        <img
-          class="app-icon"
-          src="./main/icon.png"
-          alt="Anis Ketabtoon"
-          onerror="this.style.opacity='0.25'"
-        >
-      </div>
+        <section class="card">
 
-      <span class="eyebrow">📚 د کتابونو نړۍ</span>
+            <!-- 🟢 Image in repository root -->
+            <img
+                id="appIcon"
+                class="app-icon"
+                src="./icon.png"
+                alt="Anis Ketabtoon"
+            >
 
-      <h1 id="app-title">انيس کتابتون</h1>
+            <h1>انیس کتابتون</h1>
 
-      <p class="subtitle">
-        خپل د خوښې کتابونه په اسانه ولولئ.
-        اپلیکیشن ډاونلوډ کړئ او د مطالعې نړۍ ته داخل شئ.
-      </p>
+            <div class="english-title">
+                Anis Ketabtoon
+            </div>
 
-      <div class="stats">
-        <div class="stat">
-          <span class="stat-icon" aria-hidden="true">⬇</span>
-          <span class="stat-value" id="downloads">—</span>
-          <span class="stat-label">ټول ډاونلوډونه</span>
-        </div>
+            <p class="description">
+                خپل د خوښې اسلامي کتابونه په یوه ځای کې ومومئ،
+                ډاونلوډ یې کړئ او هر وخت یې مطالعه کړئ.
+            </p>
 
-        <div class="stat">
-          <span class="stat-icon" aria-hidden="true">📱</span>
-          <span class="stat-value">APK</span>
-          <span class="stat-label">د Android اپ</span>
-        </div>
-      </div>
+            <!-- 🟡 Features -->
+            <div class="features">
 
-      <a
-        class="download-btn"
-        href="./main/Anis%20ketabtoon.apk"
-        download="Anis ketabtoon.apk"
-        id="download-btn"
-      >
-        <svg viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="2"
-             stroke-linecap="round" stroke-linejoin="round"
-             aria-hidden="true">
-          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-          <path d="m7 10 5 5 5-5"/>
-          <path d="M12 15V3"/>
-        </svg>
-        <span>اپلیکیشن ډاونلوډ کړئ</span>
-      </a>
+                <div class="feature">
+                    <span class="feature-icon">📚</span>
+                    اسلامي کتابونه
+                </div>
 
-      <p class="file-info">Anis ketabtoon.apk</p>
+                <div class="feature">
+                    <span class="feature-icon">⬇️</span>
+                    اسانه ډاونلوډ
+                </div>
 
-      <div class="status" id="status" role="status" aria-live="polite">
-        <span class="status-dot"></span>
-        <span id="status-text">له Firebase سره نښلېدل...</span>
-      </div>
-    </section>
-  </main>
+                <div class="feature">
+                    <span class="feature-icon">📱</span>
+                    د موبایل لپاره
+                </div>
 
-  <footer>
-    <p>© <span id="year"></span> انيس کتابتون</p>
-    <p>د علم او مطالعې لپاره په مینه جوړ شوی</p>
-  </footer>
+            </div>
 
-  <script type="module">
-    import { initializeApp }
-      from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
+            <!-- 🟢 APK file in repository root -->
+            <a
+                id="downloadButton"
+                class="download-button"
+                href="./Anis%20ketabtoon.apk"
+                download="Anis ketabtoon.apk"
+            >
+                ⬇️ اپلیکیشن ډاونلوډ کړئ
+            </a>
 
-    import {
-      getFirestore,
-      doc,
-      onSnapshot
-    } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
+            <div class="file-note">
+                ANDROID APPLICATION • APK
+            </div>
 
-    const firebaseConfig = {
-      apiKey: "AIzaSyAC2DfOzyi_d30Q0D9lfvT5oDJ9FAiM6O4",
-      authDomain: "downloads-11c7d.firebaseapp.com",
-      projectId: "downloads-11c7d",
-      storageBucket: "downloads-11c7d.firebasestorage.app",
-      messagingSenderId: "494155234565",
-      appId: "1:494155234565:web:3b1d5bc26032958d10cb6c",
-      measurementId: "G-PK5SEBWZJL"
-    };
+            <!-- 🟡 Firebase counter -->
+            <div class="counter">
 
-    const downloadsElement = document.getElementById("downloads");
-    const statusElement = document.getElementById("status");
-    const statusText = document.getElementById("status-text");
+                <div class="counter-label">
+                    د ثبت شویو ډاونلوډونو شمېر
+                </div>
 
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
+                <span id="downloadCount" class="counter-number">...</span>
 
-    function setStatus(message, isError = false) {
-      statusText.textContent = message;
-      statusElement.classList.toggle("error", isError);
-    }
+                <div id="counterStatus" class="counter-status">
+                    له سرور سره اړیکه...
+                </div>
 
-    try {
-      const app = initializeApp(firebaseConfig);
-      const db = getFirestore(app);
+            </div>
 
-      // Firestore path: app/downloads
-      // Collection: app | Document: downloads
-      // Field: downloads
-      const statsRef = doc(db, "app", "downloads");
+            <div id="message" class="message"></div>
 
-      onSnapshot(
-        statsRef,
-        (snapshot) => {
-          if (!snapshot.exists()) {
-            downloadsElement.textContent = "0";
-            setStatus("د شمېر سند په Firestore کې نشته.", true);
-            return;
-          }
+        </section>
 
-          const value = snapshot.data().downloads;
+    </main>
 
-          if (typeof value !== "number" ||
-              !Number.isFinite(value) ||
-              value < 0) {
-            downloadsElement.textContent = "—";
-            setStatus("د downloads فیلډ ارزښت ناسم دی.", true);
-            return;
-          }
+    <footer>
+        <p><span>Anis Ketabtoon</span> | انیس کتابتون</p>
+        <p>© <span id="year"></span> ټول حقوق خوندي دي.</p>
+    </footer>
 
-          downloadsElement.textContent =
-            new Intl.NumberFormat("en-US").format(value);
+    <!-- 🟢 Firebase JavaScript -->
+    <script type="module">
 
-          setStatus("شمېر په بریالیتوب تازه شو.");
-        },
-        (error) => {
-          console.error("Firestore error:", error);
-          downloadsElement.textContent = "—";
-          setStatus(
-            "د شمېر لوستل ناکام شول؛ اتصال او Rules وګورئ.",
-            true
-          );
+        import {
+            initializeApp
+        } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
+
+        import {
+            getFirestore,
+            doc,
+            onSnapshot,
+            updateDoc,
+            increment
+        } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
+
+
+        // 🟢 Firebase Configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAC2DfOzyi_d30Q0D9lfvT5oDJ9FAiM6O4",
+            authDomain: "downloads-11c7d.firebaseapp.com",
+            projectId: "downloads-11c7d",
+            storageBucket: "downloads-11c7d.firebasestorage.app",
+            messagingSenderId: "494155234565",
+            appId: "1:494155234565:web:3b1d5bc26032958d10cb6c",
+            measurementId: "G-PK5SEBWZJL"
+        };
+
+
+        // 🟡 Current year
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+
+        // 🟢 Image error handling
+        document.getElementById("appIcon").addEventListener(
+            "error",
+            function() {
+
+                this.style.display = "none";
+
+                console.error(
+                    "icon.png not found. Check the GitHub Pages URL."
+                );
+
+            }
+        );
+
+
+        // 🟢 Firebase elements
+        const countElement =
+            document.getElementById("downloadCount");
+
+        const statusElement =
+            document.getElementById("counterStatus");
+
+        const downloadButton =
+            document.getElementById("downloadButton");
+
+
+        try {
+
+            const app = initializeApp(firebaseConfig);
+            const db = getFirestore(app);
+
+            const counterRef = doc(db, "app", "downloads");
+
+
+            // 🟡 Live download count
+            onSnapshot(
+                counterRef,
+
+                function(snapshot) {
+
+                    if (snapshot.exists()) {
+
+                        const data = snapshot.data();
+
+                        const count = Number(data.downloads || 0);
+
+                        countElement.textContent =
+                            count.toLocaleString("en-US");
+
+                        statusElement.textContent =
+                            "شمېرنه په بریالیتوب تازه شوه";
+
+                    } else {
+
+                        countElement.textContent = "0";
+
+                        statusElement.textContent =
+                            "د app/downloads سند په Firestore کې نشته.";
+
+                    }
+
+                },
+
+                function(error) {
+
+                    console.error(
+                        "Firestore read error:",
+                        error
+                    );
+
+                    countElement.textContent = "—";
+
+                    statusElement.textContent =
+                        "شمېرنې ته لاسرسی نشته؛ Firebase Rules وګورئ.";
+
+                }
+            );
+
+
+            // 🟢 Increment counter when download is clicked
+            downloadButton.addEventListener(
+                "click",
+                function() {
+
+                    updateDoc(
+                        counterRef,
+                        {
+                            downloads: increment(1)
+                        }
+                    ).catch(function(error) {
+
+                        console.error(
+                            "Firestore update error:",
+                            error
+                        );
+
+                    });
+
+                }
+            );
+
+        } catch (error) {
+
+            console.error(
+                "Firebase initialization error:",
+                error
+            );
+
+            countElement.textContent = "—";
+
+            statusElement.textContent =
+                "د Firebase د پیل ستونزه ده.";
+
         }
-      );
-    } catch (error) {
-      console.error("Firebase initialization error:", error);
-      setStatus("د Firebase په تنظیماتو کې ستونزه ده.", true);
-    }
-  </script>
+
+    </script>
+
 </body>
 </html>
