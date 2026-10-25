@@ -11,20 +11,11 @@
 
 <style>
 
-    /* ===============================
-       🟢 PASHTO FONT
-    =============================== */
-
     @font-face {
         font-family: AnisFont;
         src: url("./mmm.ttf") format("truetype");
         font-display: swap;
     }
-
-
-    /* ===============================
-       🟢 GLOBAL
-    =============================== */
 
     * {
         margin: 0;
@@ -32,29 +23,19 @@
         box-sizing: border-box;
     }
 
-
     :root {
-
         --green: #00e676;
         --light-green: #8affbd;
-
         --dark: #061811;
         --card: #102b21;
-
         --white: #ffffff;
         --muted: #c7dacf;
-
         --yellow: #ffdc55;
-
     }
 
-
     body {
-
         font-family: AnisFont, Tahoma, Arial, sans-serif;
-
         color: var(--white);
-
         min-height: 100vh;
 
         background:
@@ -66,79 +47,41 @@
             );
 
         line-height: 1.9;
-
     }
 
-
-    /* ===============================
-       🟢 HEADER
-    =============================== */
-
     header {
-
         padding: 20px 12px;
-
         text-align: center;
 
         background: rgba(0, 0, 0, 0.25);
 
         border-bottom:
             1px solid rgba(0, 230, 118, 0.25);
-
     }
-
 
     .brand {
-
         font-family: AnisFont, Arial, sans-serif;
-
         font-size: 29px;
-
         font-weight: bold;
-
         color: var(--light-green);
-
         direction: ltr;
-
     }
-
 
     .subtitle {
-
         font-size: 14px;
-
         color: var(--muted);
-
     }
-
-
-    /* ===============================
-       🟢 MAIN CONTAINER
-    =============================== */
 
     .container {
-
         width: 100%;
-
         max-width: 680px;
-
         margin: 0 auto;
-
         padding: 32px 15px;
-
     }
 
-
-    /* ===============================
-       🟢 APP CARD
-    =============================== */
-
     .card {
-
         text-align: center;
-
         padding: 30px 22px;
-
         border-radius: 25px;
 
         background:
@@ -153,96 +96,52 @@
 
         box-shadow:
             0 18px 50px rgba(0, 0, 0, 0.35);
-
     }
 
-
-    /* ===============================
-       🟢 APP ICON
-    =============================== */
-
     .app-icon {
-
         display: block;
-
         width: 135px;
-
         height: 135px;
-
         margin: 0 auto 18px;
 
         object-fit: cover;
-
         border-radius: 28px;
-
         border: 2px solid var(--green);
-
         background: #ffffff;
 
         box-shadow:
             0 8px 28px rgba(0, 230, 118, 0.16);
-
     }
-
 
     h1 {
-
         font-size: 29px;
-
         margin-bottom: 4px;
-
     }
-
 
     .english-title {
-
         direction: ltr;
-
         font-family: Arial, sans-serif;
-
         color: var(--light-green);
-
         font-size: 19px;
-
         margin-bottom: 15px;
-
     }
-
 
     .description {
-
         max-width: 500px;
-
         margin: 0 auto 22px;
-
         color: var(--muted);
-
         font-size: 15px;
-
     }
-
-
-    /* ===============================
-       🟢 FEATURES
-    =============================== */
 
     .features {
-
         display: grid;
-
         grid-template-columns: repeat(3, 1fr);
-
         gap: 10px;
-
         margin: 24px 0;
-
     }
 
-
     .feature {
-
         padding: 13px 5px;
-
         border-radius: 14px;
 
         background:
@@ -252,41 +151,23 @@
             1px solid rgba(255, 255, 255, 0.08);
 
         color: var(--muted);
-
         font-size: 12px;
-
     }
-
 
     .feature-icon {
-
         display: block;
-
         font-size: 25px;
-
         margin-bottom: 5px;
-
     }
 
-
-    /* ===============================
-       🟢 DOWNLOAD BUTTON
-    =============================== */
-
     .download-button {
-
         display: block;
-
         width: 100%;
-
         max-width: 380px;
-
         margin: 24px auto 12px;
-
         padding: 15px 12px;
 
         border: none;
-
         border-radius: 15px;
 
         background:
@@ -297,60 +178,36 @@
             );
 
         color: #042014;
-
         text-decoration: none;
 
         font-family: AnisFont, Tahoma, sans-serif;
-
         font-size: 19px;
-
         font-weight: bold;
 
         box-shadow:
             0 8px 25px rgba(0, 230, 118, 0.2);
 
         transition: transform 0.2s ease;
-
     }
-
 
     .download-button:hover {
-
         transform: translateY(-3px);
-
     }
-
 
     .download-button:active {
-
         transform: scale(0.98);
-
     }
-
 
     .file-note {
-
         direction: ltr;
-
         font-family: Arial, sans-serif;
-
         font-size: 12px;
-
         color: #a7c9b5;
-
     }
 
-
-    /* ===============================
-       🟢 FIREBASE DOWNLOAD COUNTER
-    =============================== */
-
     .counter {
-
         margin-top: 27px;
-
         padding: 18px 12px;
-
         border-radius: 16px;
 
         background:
@@ -358,158 +215,87 @@
 
         border:
             1px solid rgba(0, 230, 118, 0.18);
-
     }
-
 
     .counter-label {
-
         color: var(--muted);
-
         font-size: 14px;
-
     }
-
 
     .counter-number {
-
         display: block;
-
         direction: ltr;
-
         font-family: Arial, sans-serif;
-
         color: var(--yellow);
-
         font-size: 33px;
-
         font-weight: bold;
-
     }
-
 
     .counter-status {
-
         color: #9db8a8;
-
         font-size: 12px;
-
     }
-
-
-    /* ===============================
-       🟢 ERROR MESSAGE
-    =============================== */
 
     .message {
-
         display: none;
-
         margin-top: 15px;
-
         padding: 12px;
-
         border-radius: 10px;
-
         overflow-wrap: anywhere;
-
         font-size: 13px;
-
     }
 
-
     .message.error {
-
         display: block;
-
         color: #ffd7d7;
 
         background:
             rgba(255, 65, 65, 0.13);
-
     }
-
-
-    /* ===============================
-       🟢 FOOTER
-    =============================== */
 
     footer {
-
         text-align: center;
-
         padding: 20px 12px 30px;
-
         color: #a0b9a9;
-
         font-size: 13px;
-
     }
-
 
     footer span {
-
         color: var(--light-green);
-
     }
-
-
-    /* ===============================
-       🟢 MOBILE RESPONSIVE
-    =============================== */
 
     @media (max-width: 480px) {
 
         .container {
-
             padding: 22px 12px;
-
         }
-
 
         .card {
-
             padding: 24px 14px;
-
         }
-
 
         .app-icon {
-
             width: 115px;
-
             height: 115px;
-
         }
-
 
         h1 {
-
             font-size: 25px;
-
         }
-
 
         .features {
-
             gap: 7px;
-
         }
 
-
         .feature {
-
             font-size: 11px;
-
         }
 
     }
 
 </style>
 
-</head><body><!-- ===============================
-     🟢 WEBSITE HEADER
-=============================== -->
+</head><body><!-- HEADER -->
 
 <header>
 
@@ -524,9 +310,8 @@
 </header>
 
 
-<!-- ===============================
-     🟢 MAIN CONTENT
-=============================== -->
+
+<!-- MAIN -->
 
 <main class="container">
 
@@ -551,9 +336,7 @@
 
 
         <div class="english-title">
-
             Anis Ketabtoon
-
         </div>
 
 
@@ -567,9 +350,8 @@
         </p>
 
 
-        <!-- ===============================
-             🟢 FEATURES
-        =============================== -->
+
+        <!-- FEATURES -->
 
         <div class="features">
 
@@ -610,9 +392,8 @@
         </div>
 
 
-        <!-- ===============================
-             🟢 DOWNLOAD BUTTON
-        =============================== -->
+
+        <!-- DOWNLOAD BUTTON -->
 
         <a
             id="downloadButton"
@@ -627,23 +408,18 @@
 
 
         <div class="file-note">
-
             ANDROID APPLICATION • APK
-
         </div>
 
 
-        <!-- ===============================
-             🟢 FIREBASE COUNTER
-        =============================== -->
+
+        <!-- FIREBASE COUNTER -->
 
         <div class="counter">
 
 
             <div class="counter-label">
-
                 د ثبت شویو ډاونلوډونو شمېر
-
             </div>
 
 
@@ -651,9 +427,7 @@
                 id="downloadCount"
                 class="counter-number"
             >
-
                 ...
-
             </span>
 
 
@@ -661,13 +435,12 @@
                 id="counterStatus"
                 class="counter-status"
             >
-
                 له سرور سره اړیکه...
-
             </div>
 
 
         </div>
+
 
 
         <!-- ERROR MESSAGE -->
@@ -683,9 +456,8 @@
 </main>
 
 
-<!-- ===============================
-     🟢 FOOTER
-=============================== -->
+
+<!-- FOOTER -->
 
 <footer>
 
@@ -714,9 +486,7 @@
 
 
 
-<!-- ===============================
-     🟢 FIREBASE JAVASCRIPT
-=============================== -->
+<!-- FIREBASE -->
 
 <script type="module">
 
@@ -798,21 +568,16 @@
 
 
     /* ===============================
-       ICON ERROR HANDLING
+       ICON ERROR
     =============================== */
 
-    appIcon.addEventListener(
-        "error",
-        function() {
+    appIcon.addEventListener("error", function() {
 
-            this.style.display = "none";
+        this.style.display = "none";
 
-            console.error(
-                "icon.png not found."
-            );
+        console.error("icon.png not found.");
 
-        }
-    );
+    });
 
 
 
@@ -820,237 +585,191 @@
        FIREBASE INITIALIZATION
     =============================== */
 
-    let db;
+    const app = initializeApp(firebaseConfig);
 
-    let counterRef;
-
-
-    try {
-
-
-        const app = initializeApp(firebaseConfig);
-
-
-        db = getFirestore(app);
+    const db = getFirestore(app);
 
 
 
-        /*
-         * Firestore Structure:
-         *
-         * Collection: downloads
-         *
-         * Document: downloads
-         *
-         * Field: downloads
-         *
-         */
+    /*
+     * Collection: downloads
+     * Document: downloads
+     * Field: downloads
+     */
 
-
-        counterRef = doc(
-            db,
-            "downloads",
-            "downloads"
-        );
+    const counterRef = doc(
+        db,
+        "downloads",
+        "downloads"
+    );
 
 
 
-        /* ===============================
-           LIVE DOWNLOAD COUNT
-        =============================== */
+    /* ===============================
+       LIVE COUNTER
+    =============================== */
 
-        onSnapshot(
+    onSnapshot(
 
-            counterRef,
+        counterRef,
 
-
-            function(snapshot) {
-
-
-                if (snapshot.exists()) {
+        function(snapshot) {
 
 
-                    const data = snapshot.data();
+            if (snapshot.exists()) {
 
 
-                    const count =
-                        Number(data.downloads ?? 0);
+                const data = snapshot.data();
 
 
-                    countElement.textContent =
-                        count.toLocaleString("en-US");
+                const count =
+                    Number(data.downloads ?? 0);
 
 
-                    statusElement.textContent =
-                        "شمېرنه په بریالیتوب تازه شوه";
+                countElement.textContent =
+                    count.toLocaleString("en-US");
 
 
-                } else {
+                statusElement.textContent =
+                    "شمېرنه په بریالیتوب تازه شوه";
 
 
-                    countElement.textContent = "0";
+            } else {
 
 
-                    statusElement.textContent =
-                        "د ډاونلوډونو شمېر لا نه دی ثبت شوی.";
+                countElement.textContent = "0";
 
 
-                }
+                statusElement.textContent =
+                    "د شمېر سند لا نه دی جوړ شوی.";
 
-            },
+
+            }
+
+        },
+
+        function(error) {
 
 
-            function(error) {
+            console.error(
+                "Firestore read error:",
+                error
+            );
+
+
+            countElement.textContent = "—";
+
+
+            statusElement.textContent =
+                "Firestore ته لاسرسی نشته.";
+
+
+        }
+
+    );
+
+
+
+    /* ===============================
+       DOWNLOAD COUNTER
+    =============================== */
+
+    downloadButton.addEventListener(
+
+        "click",
+
+        async function() {
+
+
+            try {
+
+
+                await runTransaction(
+
+                    db,
+
+                    async function(transaction) {
+
+
+                        const snapshot =
+                            await transaction.get(counterRef);
+
+
+
+                        if (snapshot.exists()) {
+
+
+                            const currentCount =
+                                Number(
+                                    snapshot.data().downloads ?? 0
+                                );
+
+
+                            transaction.update(
+
+                                counterRef,
+
+                                {
+
+                                    downloads:
+                                        currentCount + 1
+
+                                }
+
+                            );
+
+
+                        } else {
+
+
+                            transaction.set(
+
+                                counterRef,
+
+                                {
+
+                                    downloads: 1.0
+
+                                }
+
+                            );
+
+
+                        }
+
+                    }
+
+                );
+
+
+                console.log(
+                    "Download count updated successfully."
+                );
+
+
+            } catch (error) {
 
 
                 console.error(
-                    "Firestore read error:",
+                    "Firestore update error:",
                     error
                 );
 
 
-                countElement.textContent = "—";
+                messageElement.textContent =
+                    "د ډاونلوډ شمېر ثبت نه شو. Firebase Rules وګورئ.";
 
 
-                statusElement.textContent =
-                    "شمېرنې ته لاسرسی نشته؛ Firebase Rules وګورئ.";
+                messageElement.classList.add(
+                    "error"
+                );
 
 
             }
 
-        );
+        }
 
-
-
-        /* ===============================
-           DOWNLOAD COUNTER INCREMENT
-        =============================== */
-
-        downloadButton.addEventListener(
-
-            "click",
-
-            async function() {
-
-
-                /*
-                 * The APK download begins normally.
-                 *
-                 * Firebase counter updates separately.
-                 *
-                 */
-
-
-                try {
-
-
-                    await runTransaction(
-
-                        db,
-
-                        async function(transaction) {
-
-
-                            const snapshot =
-                                await transaction.get(counterRef);
-
-
-
-                            if (snapshot.exists()) {
-
-
-                                const data =
-                                    snapshot.data();
-
-
-                                const currentCount =
-                                    Number(data.downloads ?? 0);
-
-
-                                transaction.update(
-
-                                    counterRef,
-
-                                    {
-
-                                        downloads:
-                                            currentCount + 1
-
-                                    }
-
-                                );
-
-
-                            } else {
-
-
-                                transaction.set(
-
-                                    counterRef,
-
-                                    {
-
-                                        downloads: 1.0
-
-                                    }
-
-                                );
-
-
-                            }
-
-                        }
-
-                    );
-
-
-                    console.log(
-                        "Download count updated successfully."
-                    );
-
-
-                } catch (error) {
-
-
-                    console.error(
-                        "Firestore update error:",
-                        error
-                    );
-
-
-                    messageElement.textContent =
-                        "د ډاونلوډ شمېر ثبت نه شو. د Firestore Rules او سند جوړښت وګورئ.";
-
-
-                    messageElement.classList.add(
-                        "error"
-                    );
-
-
-                }
-
-            }
-
-        );
-
-
-    } catch (error) {
-
-
-        console.error(
-            "Firebase initialization error:",
-            error
-        );
-
-
-        countElement.textContent = "—";
-
-
-        statusElement.textContent =
-            "د Firebase د پیل ستونزه ده.";
-
-
-    }
+    );
 
 
 </script>
